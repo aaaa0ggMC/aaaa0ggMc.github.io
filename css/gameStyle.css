@@ -1,0 +1,100 @@
+body
+{
+  font-size: 16px;
+  line-height: 8px;
+}
+
+.hd{
+  display:none;
+}
+
+.b{
+  text-align:center;
+}
+
+.add,.con{
+  font-size:10px;
+  color:Grey;
+}
+
+.con{
+  line-height:2px;
+}
+
+.vshd{
+  visibility:hidden;
+}
+
+.title0{
+  text-align:center;
+  font-size:64px;
+  font-weight:bold;
+  line-height: 0px;
+}
+
+body{
+  color:White;
+  background-color:Black;
+}
+
+.showsb{
+  -webkit-animation-name: fadeAway; /*动画名称*/
+  -webkit-animation-duration: 8s; /*动画持续时间*/
+  -webkit-animation-iteration-count: infinity; /*动画次数*/
+  -webkit-animation-delay: 0s; /*延迟时间*/
+  opacity:0;
+}
+
+@-webkit-keyframes fadeAway{
+  0%{
+	opacity:0;
+  }
+  25%{
+	opacity:1;
+  }
+  75%{
+	opacity:1;
+  }
+  100%{
+	opacity:0;
+  }
+}
+
+.noUnder{
+  text-decoration:none;
+}
+
+.NAMESD{
+  color:Yellow;
+  text-align:center;
+  font-size:16px;
+  font-weight:bold;
+  -webkit-animation-name: shake; /*动画名称*/
+  -webkit-animation-duration: 4s; /*动画持续时间*/
+  -webkit-animation-iteration-count: infinite; /*动画次数*/
+  -webkit-animation-delay: 0s; /*延迟时间*/
+  opacity:1;
+}
+
+@-webkit-keyframes shake{
+  0%{
+	font-size:16px;
+  }
+  25%{
+	font-size:12px;
+  }
+  50%{
+	font-size:16px;
+  }
+  75%{
+	font-size:20px;
+  }
+  100%{
+	font-size:16px;
+  }
+}
+
+.GCanvas{
+  background-color:White;
+  color:White;
+}

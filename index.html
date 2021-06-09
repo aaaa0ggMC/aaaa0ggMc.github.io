@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>警察之下(Underpolice)</title>
+    <link href="css/gameStyle.css" rel="stylesheet" />
+	  
+	<!--very bad script here has no effect<script src="js/util.js"></script>!-->
+	<script src="rc/util.js"></script>
+	<script src="rc/game.js"></script>
+	<script>
+	  
+	  //player basic infomation
+	  var money = 0;
+	  
+	  var showConsole = false;
+	  
+	  var player;
+	  
+	  var timeall = 0,sday = 1,smonth = 1,syear = 1;
+	  
+	  function showMan(){
+	    gp.innerHTML = document.getElementById("Game@Chara").innerHTML;
+	  }
+	  
+	  function ToggleConsole(funToUpdate){
+	    var c = document.getElementById("a");
+		var d = document.getElementById("tg");
+		if(!showConsole){
+		    c.style = "display:display;";
+			d.innerHTML = "关闭控制台";
+		}else{
+		  c.style = "display:none;";
+		  d.innerHTML = "打开控制台";
+		}
+		showConsole = !showConsole;
+		//ButtonCannotUpdateWeNeedToReMenu
+	    funToUpdate();
+	  }
+	  
+	  var sureBefore = "";
+	  
+	  function GetName(tar){
+	    var showSC = idp("showONSC");
+		if(Compare0(tar.value,["杨盛龙","拉拉杨","拉拉羊","杨拉拉"],0)){
+		  var sosc = "";
+		  switch(tar.value){
+		    case "杨盛龙":
+			  sosc = "WOC!你怎么知道作者的名字?刀了刀了！";
+			  break;
+		    case "拉拉杨":
+			case "拉拉羊":
+			case "杨拉拉":
+			  sosc = "WDNMD,你TM知道我的外号？";
+			  break;
+		  }
+		  flushBlock("showONSC",sosc);
+		  clog("拒绝设置");
+		  sureBefore = idp("goSure").innerHTML;
+		  flushBlock("goSure","");
+		  return;
+		}
+		if(sureBefore != ""){
+		  flushBlock("goSure",sureBefore);
+		  sureBefore = "";
+		}
+	    var playerName = player.name = tar.value;
+		flushBlock("showONSC","");
+		var pn = playerName.toUpperCase();
+		var exa = "";
+		//StartGame("Game@GoOnaDay");
+		clog("playerName = html.dom.input.name(\"name\").string;");
+		clog("print(playerName);");
+		clog("[console]:<span style=\"color:White;\">"+playerName+"</span>");
+		//拒绝访问
+		if(pn == "YSL" || pn == "AAAA0GGMC"){
+		  cclear();
+		  document.getElementById("a").style = "display:display;";
+		  gp.innerHTML = "You found a secret!";
+		  setTimeout(function(){
+		    setInterval(
+			  function(){
+			    clog("<span onclick=\"window.close();\">click here to close window</span>");
+			  },10);
+		  },1600);
+		}else  if(Compare0(
+	    pn,
+		["STEVE","MINECRAFT","ALICE","MC",
+		"C418","HIM","HEROBRINE"],6)){
+		  //刷新部分
+		  flushBlock("showONSC","HaHa,u are a <span onclick='EGGMC();'>minecraft</span> lover!");
+		}else  if(Compare0(
+	    playerName,
+		["原神"],1)){
+		  flushBlock("showONSC","哈哈，你玩原神(虽然我不玩)");
+		}else  if(Compare0(
+	    pn,
+		["SANS","PAPYRUS","UNDYNE",
+		 "ASGORE","ASRIEL","FLOWEY",
+		 "FRISK","CHARA","GASTER"],9)){
+		  if(pn == "SANS"){
+		    exa = "sans looks so handsome,right?";
+		  }else if(pn == "PAPYRUS")exa="papyrus:sans's brother";
+		  else if(pn == "UNDYNE")exa="undyne:undying";
+		  else if(pn == "FLOWEY")exa="how evil u are";
+		  else if(pn == "CHARA")exa="you are bader than you named flowey!";
+		  else if(pn == "GASTER")exa ="u want to cheat,right?";
+		  flushBlock("showONSC",
+		  "<p>Is this character in UNDERTALE?</p>"+
+		  "<p>"+exa+"</p>");
+		}
+	}
+	  
+	  function updateBI(){
+	    var m = idp("money"),n = idp("nameSH");
+		m.innerHTML = player.money;
+		n.innerHTML = player.name;
+	  }
+	  
+	  function Sure0(){
+	    var c = confirm("Are you sure the name [" + player.name + "]");
+		if(c){
+	      StartGame('Game@0');
+		  canvasF();
+		  startCalucateTime();
+		  updateBI();
+		  show(idp('BI'));
+		  clog("The user's final name is ["+playerName+"]");
+		  return;
+		}
+		clog("The user want to think for twice,like a bitch");
+	  }
+	  
+	  function undertaleEGG(){
+	    clog('<span onclick= "StartGame(\'EGG@TobyFox\');EGGTOBYF();">Respect to undertale by tobyfox</span>');
+	  }
+	  
+	  function EGGMC(){
+	    StartGame("EGG@mc");
+		idp("audio1").play();
+	  }
+	  
+	   var TO0,TO1;
+	  
+	  function INTROF(){
+		  TO1 = setTimeout(
+		  function(){
+		    var token0 = idp("MSC");
+			token0.innerHTML = '<p class="title0">Made By</p><p style="color:Yellow;" class="title0"><a target="_blank" style="color:Yellow;" href="https://space.bilibili.com/394099679" onclick="clog(\'Oh!U FOUND A EGG!\');clog(\'Exciting?There are many other eggs waiting for you!\');" class="noUnder">aaaa0ggmc</a></p>';
+			StartGame("Intro");
+			TO1 = setTimeout(function(){
+			  clog("The user is silly boy/girl,he/she doesn't want to skip!");
+		      Menu();
+			},8000);
+		  },8000);
+	}
+	
+	function EGGTOBYF(){
+	  var au = idp("audio0");
+	  au.play();
+	}
+	</script>
+	
+	<!-- data块不可装script可立马执行模块，否则会出错 !-->
+	  
+	<block class="hd">
+	<STARTDATA />
+	<data id="Game@Menu">
+	  <div class="b">
+	    <p class="title0">
+		  警察之下
+		  <p class="add" onclick="undertaleEGG();">
+		  underpolice
+		  </p>
+		</p>
+		<!--下面那行是放屁用的 !-->
+		<!-- 用于填充绝对位置 !-->
+		<button onclick="var nS = idp('name');StartGame('Game@GoOnaDay');">开始游戏</button>
+		<button onclick="ToggleConsole(Menu);"><span id="tg">打开控制台</span></button>
+		<p></p>
+	  </div>
+	</data>
+	  <data id="Game@GoOnaDay">
+		<p id="showONSC" class="NAMESD"></p>
+		<p style="text-align:center;">你的名字:<input onchange="GetName(this);"  type="text" id="name"/></p>
+		<p  style="text-align:center;" id="goSure"><button onclick="Sure0();">配置完成</button></p>
+		<p   style="text-align:center;"><button onclick="Menu()">--返回--</button></p>
+	  </data>
+	  <data id="Game@0">
+		<canvas width="800" height="600" class="GCanvas" id="GC" >We Do Not Support the Canvas Title</canvas>
+	  </data>
+	  <data id="Intro">
+		<div id="MSC" class="showsb">
+		  <p class="title0">Made With </p>
+		  <p class="title0" style="color:Yellow;">StudyAll</p>
+		  <p class="title0">Studio</p>
+		  <p class="title0"><img src="rc/logo.jpg" /></p>
+		</div>
+		<p class="title0" onclick="clearTimeout(TO0);clog('clear time out studio saying!');clearTimeout(TO1);clog('clear time out author!saying');Menu();" style="font-size:16px;">skip</p>
+	  </data>
+	  
+	  <data id="ERROR">
+		<p id="emsg" style="text-align:center" >noError</p>
+	  </data>
+	  
+	  
+	  <data id="EGG@TobyFox">
+		<p class="title0"><img src="rc/tobyfox.jpg" /></p>
+		<p class="add" style="text-align:center;">你找到了一个彩蛋</p>
+		<br />
+		 <br />
+		   <!-- 人们可能以为这很高级，可以记录下播放到哪里了，实际上，只是我不知道如何让它重新播放罢了，asu.load()似乎无用 !-->
+		 <p class="title0" style="font-size:16px;" onclick="var asu = idp('audio0');asu.pause();Menu();">back</p>
+	  </data>
+	  
+	  
+	  <data id="EGG@mc">
+		<p class="title0"><img src="rc/mojang.jpg"/><img src="rc/mc.jpg" /></p>
+		<p class="add" style="text-align:center;">你找到了一个彩蛋</p>
+		<br />
+		<br />
+		<!-- 人们可能以为这很高级，可以记录下播放到哪里了，实际上，只是我不知道如何让它重新播放罢了，asu.load()似乎无用 !-->
+		<p class="title0" style="font-size:16px;" onclick="var asu = idp('audio1');asu.pause();Menu();">back</p>
+	  </data>
+	  
+	<ENDDATA />
+	</block>
+  </head>
+  <body> 
+	<!-- audio states !-->
+	<audio style="display:none;" src="rc/hisTheme.mp3" controls id="audio0" loop style="display:display;">UNDERTALE Audio Not Supported!</audio>
+	<audio style="display:none;" src="rc/mc.mp3" controls id="audio1" loop style="display:display;">MINECRAFT Audio Not Supported!</audio>
+	<!-- BasicInfomation hide first !-->
+	<div id="BI" style="display:none;">
+	  <p>名字:<span id="nameSH">none</span></p>
+	  <p>金钱:<span id="money">0</span>$</p>
+	  <p>第<span id="year"></span>年<span id="month">月</span><span id="day"></span>日</p>
+		<p><span id="hour"></span>h:<span id="minute"></span>m:<span id="second"></span>s
+	    </p>
+	</div>
+	<div id="GamePlane"></div>
+	<div id="a" style="display:none;text-align:center;">
+	  <p id="c00" style="text-align:center;">
+		[YSL的控制(调试)台]:
+	    <span id="console" class="con"></span>
+	  </p>
+	</div>
+	<script src="js/util.js"></script>
+	<script src="js/game.js"></script>
+	<script>
+	  var ihour = idp("hour"),
+	  imin = idp("minute")
+	  ,isec = idp("second"),
+	  iyear = idp("year"),
+	  imonth = idp("month"),
+	  iday = idp("day");
+	  var inUP = [1,60,60,24];
+	  var list = new Array();
+	  var pre = 0;
+	  var temp = 0;
+	  var aday = 24 * 60 * 60;
+	  var tUpdateInterval;
+	  function startCalucateTime(){
+	  clog("--prepare-to-calucate-time--");
+	  tUpdateInterval = setInterval(
+	  function(){
+	    list[0] = list[1] = list[2] = 0;
+	    timeall++;
+	    pre = 0;
+		temp = timeall;
+		if(timeall >= aday){
+		  timeall = 0;
+		  day++;
+		}else {
+		  for(var x = 0;x < 3;x++){
+		    temp -= pre;
+		    temp /= inUP[x];
+		    list[x] = pre = temp % inUP[x+1];
+		  }
+		  ihour.innerHTML = list[2];
+		  imin.innerText = list[1];
+		  isec.innerHTML = list[0];
+		  iyear.innerHTML = syear;
+		  imonth.innerHTML = smonth;
+		  iday.innerHTML = sday;
+		}
+	  },10);
+	  }
+	  
+	  function init(){
+	    player = new Player(100,0,"",HUMAN);
+	  }
+	  
+	  init();
+	</script>
+  </body>
+</html>

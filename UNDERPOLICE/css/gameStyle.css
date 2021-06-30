@@ -2,7 +2,7 @@ body
 {
   font-size: 16px;
   line-height: 8px;
-}
+} 
 
 .hd{
   display:none;
@@ -19,6 +19,7 @@ body
 
 .con{
   line-height:2px;
+  cursor:default;
 }
 
 .vshd{

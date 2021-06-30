@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ZH_CN">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title id="WebTitle">超度利器</title>
+</head>
+<body>
+	<!-- Use To Calucate Font Size!-->
+	<span id="word-cal" style="display: none;"></span>
+	<!--Canvas!-->
+	<div id="canvasDiv">
+		<canvas id="canvas" class="canvas0">浏览器不支持canvas标签</canvas>
+	</div>
+	<!--JQuery!-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/util.js"></script>
+	<script type="text/javascript" src="js/htmlData.js"></script>
+	<!--Game Javascript!-->
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		window.onload = function(e) {
+			InitCanvasSZ();
+			StartPainting();
+		};
+		window.onresize = function(e){
+			InitCanvasSZ();
+		}
+	</script>
+</body>
+</html>

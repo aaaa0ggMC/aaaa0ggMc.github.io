@@ -47,17 +47,16 @@ function XYP(px,py,w,h){
 	return new Vector(px*w,py*h);
 }
 
-function Colider(x,y,w,h){
+function Colider(x,y,w,h,obj){
 	this.x = x;
 	this.y = y;
 	this.w = w;
 	this.h = h;
+	this.obj = obj;
 	this.contain = function(p){
-		if(p.x >= this.x && p.y >= this.y){
-			if(p.x <= this.x+this.w && p.y <= this.x+this.h)
+		if(p.x >= this.x && p.y >= this.y-this.h)
+			if(p.x <= this.x+this.w && p.y <= this.y)
 				return true;
-			return false;
-		}
 		return false;
 	};
 

@@ -71,8 +71,8 @@ function StartPainting(){
 				//Draw Background Image
 				g.drawImage(head,0,0,sv.x,sv.y);
 				//Title
-				g.font = px0 + "px 华文行楷";
-				wcal.style = "font-size:" + px0 + "px;font-family:华文行楷;" + _wcBsStyle;
+				g.font = px0 + "px GM0";
+				wcal.style = "font-size:" + px0 + "px;font-family:GM0;" + _wcBsStyle;
 				$(_qwc).text("诡异的地方");
 				var x = parseInt((sv.x - $(_qwc).width())/2);
 				var y = parseInt(($(_qwc).height()));
@@ -86,8 +86,8 @@ function StartPainting(){
 				g.fillRect(x,y,parseInt(sv.x * 0.6),parseInt(sv.y * 0.48));
 				//DrawTarget0
 				g.fillStyle = "#ff0000";
-				g.font = px1 + "px 华文行楷";
-				wcal.style = "font-size:" + px1 + "px;font-family:华文行楷;" + _wcBsStyle;
+				g.font = px1 + "px GM0";
+				wcal.style = "font-size:" + px1 + "px;font-family:GM0;" + _wcBsStyle;
 				$(_qwc).text("开始超度");
 				x = parseInt((sv.x - $(_qwc).width())/2);
 				y = parseInt(($(_qwc).height()) + sv.y * 0.52);

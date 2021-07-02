@@ -6,3 +6,8 @@ body{
 .canvas0{
 	background-color:white;
 }
+
+@font-face{
+	font-family: GM0;
+	src:url("../rc/ft0.TTF");
+}

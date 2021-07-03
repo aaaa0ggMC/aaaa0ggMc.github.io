@@ -165,7 +165,7 @@
 				<div style="display: flex;">
 					<div style="margin-top:auto;margin-bottom: auto;">
 						<p>
-							<span style="margin-left: 400px;visibility: hidden;">h</span>
+							<span style="margin-left: 500px;visibility: hidden;">h</span>
 							<input style="border-color: #00ff00;border: 1;outline-color:#00ff00;">
 								<button style="border-color: #00ff00;outline-color: #00ff00;border: 1;background-color: #00ff00;">搜索</button>
 							</input>
@@ -179,7 +179,9 @@
 		<p style="line-height: 5px;visibility: hidden;">This is not an Easter Egg!</p>
 		<p id="sayW">主页>坏慕课>蔡虚坤</p>
 		<div id="centerc">
-			<video id="vi" controls="true" src="./cxk.mp4">呦呦呦！浏览器太拉了！</video>
+			<!-- x5-video-player-type z-index层不被覆盖(手机端)  x-5-vi...让视频随手机旋转而旋转 !-->
+			<video id="vi" controls="true" src="./cxk.mp4" x5-video-player-type="h5-page"
+			x5-video-orientation="landscape|portrait">呦呦呦！浏览器太拉了！</video>
 			<div id="section">
 				<p class="info0">讲师信息:</p>
 				<div>

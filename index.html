@@ -1,15 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gaming</title>
+	<title>Welcome To aaaa0ggmc's website!</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-image: url(./bg.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			color:#ffffff;
+		}
+		header {
+		    color:#ffffff;
+		    padding: 5px;
+		}
+		nav {
+		    float:left;
+		    height: 600px;
+		    margin-left: 20px;
+		    margin-right:10px;
+			background-color: rgba(128,128,128,0.6);
+		}
+		section {
+		    float:left;
+		    min-width: 600px;
+		    height: 600px;
+		    color:#ffffff;
+			background-color: rgba(128,128,128,0.6);
+		    display:inline-block;
+		}
+		footer {
+		    color:#ffffff;
+		    clear:both;
+		    text-align:center; 
+		    padding: 5px;
+		    font-size: 12px;
+		}
+		.noneDec,.noneDec0{
+			text-decoration: none;
+			color:#ffffff;
+		}
+		footer,.noneDec0{
+			-webkit-user-select:none;
+    		-moz-user-select:none;
+     		-ms-user-select:none;
+     		user-select:none;
+		}
+	</style>
 </head>
 <body>
-	<h>Website Author:aaaa0ggmc</h>
-	<br/>
-	<a href="./UNDERPOLICE/index.html">UNDERPOLICE 警察之下</a>
-	<br/>
-	<a href="./Funning/index.html">Die 超度</a>
-	<br/>
-	<a href="./BADMOOC/index.html">坏慕课 BadMooc</a>
+	<header>
+		<p>aaaa0ggmc</p>
+	</header>
+	<nav>
+		<div class="out">
+			<p id="wu" class="noneDec0" onclick="PageSet(0,this)">(无)</p>
+			<p class="noneDec0" onclick="PageSet(1,this);">警察之下 UNDERPOLICE</a>
+			<p class="noneDec0" onclick="PageSet(2,this);">超度 Die</a>
+			<p class="noneDec0" onclick="PageSet(3,this);">坏慕课 BadMooc</a>
+		</div>
+	</nav>
+	<section id="sv">
+		
+	</section>
+	<footer>
+		<p>Copyright:<a href="https://space.bilibili.com/394099679" target="_blank" class="noneDec">aaaa0ggmc</a></p>
+		<p>未备案<span onclick="clickReason(this);" class="clik0">(点我看原因)</span></p>
+	</footer>
+	<script type="text/javascript" src="./data.js"></script>
+	<script type="text/javascript" src="./Tool/jquery.js"></script>
+	<script type="text/javascript">
+		var sv = document.getElementById('sv');
+		var tpre = new Image();
+		function PageSet(i,t){
+			sv.innerHTML = pages[i];
+			t.style.color = "#ffff00";
+			tpre.style.color = "#ffffff";
+			tpre = t;
+		}
+		function clickReason(tar) {
+			tar.innerHTML = "(原因:没钱(Haha!买不起中国的com域名)(80左右/年，你给我买行吗?))";
+			tar.onclick = "";
+			tar.class = "";
+		}
+		PageSet(0,document.getElementById('wu'));
+	</script>
 </body>
 </html>

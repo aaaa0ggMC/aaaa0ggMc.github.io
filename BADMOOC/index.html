@@ -1,33 +1,227 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>鸡你太美的应用</title>
+	<meta name="keywords" content="蔡虚坤精讲--坏慕课">
+    <meta name="description" content="蔡虚坤精讲--坏慕课">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=1366, initial-scale=1" name="viewport">
+	<title>蔡虚坤精讲--坏慕课</title>
+	<link rel="shortcut icon" href="./cxk.ico" />
 	<style type="text/css">
 		*{
 			margin: 0;
 			padding: 0;
 		}
-		.l{
-			float: left;
+		#header {
+		    color:#000000;
+		    padding: 5px;
 		}
-		.r{
-			float: right;
+		#vi {
+		    float:left;
+		    margin-left: 100px;
+		    margin-top: 10px;
+		    margin-right:10px;
+		}
+		#sayW{
+		    margin-left: 100px;
+		    color: #888888;
+		    font-size: 10px;
+		}
+		#section {
+		    float:left;
+		    color:#000000;
+		    padding: 20px;
+		    display:inline-block;
+		}
+		#footer {
+		    color:#000000;
+		    clear:both;
+		    text-align:center; 
+		    padding: 5px;
+		    font-size: 12px;
+		}
+		.noneDec{
+			text-decoration: none;
+			color: #000000;
+		}
+		body{
+			background-color: #ffffff;
+		}
+		#centerc{
+			display: flex;
+		}
+		#centerv{
+			background-image: url(./bg.jpg);
+			background-repeat: no-repeat;
+		}
+		.clik0{
+			cursor: default;
+		}
+		.hv1{
+			font-size: 8px;
+			color:#777;
+			display: flex;
+		}
+		#sayW , #footer , .hv1{
+			-webkit-user-select:none;
+    		-moz-user-select:none;
+     		-ms-user-select:none;
+     		user-select:none;
+		}
+		.tg0{
+			margin-left: 100px;
+		}
+		.im0{
+			border: 0;
+		}
+		#ptc {
+    		width: 160px;
+    		color: white;
+    		background: #1E9168;
+    		position: absolute;
+    		margin-top: 4px;
+    		margin-left: 100px;
+   			opacity: 1;
+   			z-index: 99;
+		}
+		.ul0{
+			margin-left: 20px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font: 14px Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial, sans-serif;
+		}
+		.li0{
+			list-style: none;
+			font-size: 16px;
+			font: 14px Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial, sans-serif;
+		}
+		.login0{
+			margin-left: auto;
+			margin-right: 20px;
+		}
+		.im1{
+			marker-right:4px;
+		}
+		.info0{
+			font-size: 24px;
 		}
 	</style>
+	<!--#333C41 is the bgc !-->
 </head>
 <body>
-	<video id="vi" controls="true" src="./cxk.mp4">呦呦呦！浏览器太拉了！</video>
-	<p style="margin-top: 256px;">讲师信息:</p>
-	<div>
-		<img class="l" src="./cxk.png"/>
-		<div class="r">
-			<p>蔡虚坤:篮球大师，NBA领导者，鸡的领军人</p>
-			<p>她的成就:</p>
-			<ul>
-				<li>成了明星</li>
-				<li>变得漂亮了</li>
-			</ul>
+	<div id="header">
+		<div>
+			<div class="hv1">
+				<p class="hm">
+					<span>BADMOOC首页</span>
+					<div onmouseover="clearTimeout(itv);setTS('block');" onmouseout="clearTimeout(itv);setTS('none')" 
+					onclick="clearTimeout(itv);setTS((sh == true):'none':'block');">
+						<p class="tg0">
+							<img class="im0" src="./pos.png" />全站导航
+							<img class="im0" src="./outer.png" />
+							<div onclick="" id="ptc" style="display: none;">
+								<ul class="ul0">
+									<div class="li0">
+										<li>首页</li>
+										<li>MOOC名坟</li>
+										<li>挖坟软件MOOC</li>
+										<li>挖坟MOOC</li>
+										<li>坟墓中心</li>
+										<li>中小坟MOOC</li>
+										<li>精品坟墓MOOC</li>
+										<li>网站二手坟</li>
+										<li>死人招聘</li>
+										<li>挖坟秘籍</li>
+									</div>
+								</ul>	
+							</div>
+						</p>
+					</div>
+					<span class="login0"><img class="im1" src="./people.png" />一键登录</span>
+				</p>
+				<script type="text/javascript">
+					var dt = document.getElementById('ptc');
+					var sh = false;
+					var itv;
+					function setTS(v){
+						itv = setTimeout(
+							function(){
+								sh = (v=="none")?false:true;
+								dt.style.display = v;
+							}
+							,100
+						);
+					}
+				</script>
+			</div>		
+		</div>
+		<hr/>
+		<div>
+			<div style="display:flex;padding: 0;">
+				<img height="60px" src="./logo.png" />
+				<div style="margin-left: 200px;margin-top: auto;margin-bottom: auto;">
+					<h2>坏慕课•中小坟MOOC</h2>
+				</div>
+				<div style="display: flex;">
+					<div style="margin-top:auto;margin-bottom: auto;">
+						<p>
+							<span style="margin-left: 400px;visibility: hidden;">h</span>
+							<input style="border-color: #00ff00;border: 1;outline-color:#00ff00;">
+								<button style="border-color: #00ff00;outline-color: #00ff00;border: 1;background-color: #00ff00;">搜索</button>
+							</input>
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+	<div id="centerv">
+		<p style="line-height: 5px;visibility: hidden;">This is not an Easter Egg!</p>
+		<p id="sayW">主页>坏慕课>蔡虚坤</p>
+		<div id="centerc">
+			<video id="vi" controls="true" src="./cxk.mp4">呦呦呦！浏览器太拉了！</video>
+			<div id="section">
+				<p class="info0">讲师信息:</p>
+				<div>
+					<div style="text-align: center;">
+						<img src="./cxk.png"/>
+						<p style="font-size: 8px;color:#999999;">蔡虚坤</p>
+					</div>
+					<div>
+						<p><span style="font-size: 24px;">蔡虚坤</span>:篮球大师，NBA领导者，鸡的领军人</p>
+						<br/>
+						<p>她的成就:</p>
+						<ul>
+							<li>养了无数个"i鲲"</li>
+							<li>被鬼畜了无数次</li>
+							<li>收获了无数粉丝</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<p>Copyright:<a href="https://space.bilibili.com/394099679" target="_blank" class="noneDec">aaaa0ggmc</a></p>
+		<p>未备案<span onclick="clickReason(this);" class="clik0">(点我看原因)</span></p>
+		<p>本网站内容纯属恶搞，勿当真，谁信睡是傻X </p>
+		<p>注:本网站全部内容由作者自己手打，未抄袭好慕课代码!(除了部分css)</p>
+	</div>
+	<script type="text/javascript" src="../Tool/jquery.js"></script>
+	<script type="text/javascript">
+		function clickReason(tar) {
+			tar.innerHTML = "(原因:没钱(Haha!买不起中国的com域名)(80左右/年，你给我买行吗?))";
+			tar.onclick = "";
+			tar.class = "";
+		}
+		var vi = document.getElementById('vi');
+		var ti = document.getElementById('section');
+		var tiQ = $('#section');
+		ti.style.width = parseInt(tiQ.width())+"px";
+		vi.width = parseInt(window.innerWidth - tiQ.width()*1.2);//is padding
+		vi.height = parseInt(vi.width * 9 / 16);
+		ti.style.height = vi.height;
+		console.log(window.innerWidth);
+	</script>
 </body>
 </html>

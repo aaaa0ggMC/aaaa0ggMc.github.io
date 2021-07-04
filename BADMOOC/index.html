@@ -82,7 +82,7 @@
     		margin-top: 4px;
     		margin-left: 100px;
    			opacity: 1;
-   			z-index: 99;
+   			z-index: 99999;
 		}
 		.ul0{
 			margin-left: 20px;
@@ -115,7 +115,7 @@
 				<p class="hm">
 					<span>BADMOOC首页</span>
 					<div onmouseover="clearTimeout(itv);setTS('block');" onmouseout="clearTimeout(itv);setTS('none')" 
-					onclick="clearTimeout(itv);setTS((sh == true):'none':'block');">
+					onclick="clearTimeout(itv);setTS((sh == true)?'none':'block');">
 						<p class="tg0">
 							<img class="im0" src="./pos.png" />全站导航
 							<img class="im0" src="./outer.png" />

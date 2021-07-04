@@ -1,8 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html id="htm" lang="zh-cn">
 <head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="./head.ico" />
+	<script type="text/javascript" src="./cookie.js"></script>
+    <script type="text/javascript">
+    	//检查语言
+    	if(cookie.lan == 0){
+			document.getElementById('htm').lang = "en";
+		}
+    </script>
 	<title>Welcome To aaaa0ggmc's website!</title>
-	<style type="text/css">
+	<meta name="keywords" content="aaaa0ggmc">
+    <meta name="description" content="aaaa0ggmc's website">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+   	<style type="text/css">
 		*{
 			margin: 0;
 			padding: 0;
@@ -19,18 +32,40 @@
 		}
 		nav {
 		    float:left;
+		    min-width: 240px;
 		    height: 600px;
 		    margin-left: 20px;
 		    margin-right:10px;
 			background-color: rgba(128,128,128,0.6);
+		   	overflow: auto;
+		}
+		/* 定义滚动条样式 */
+		::-webkit-scrollbar {
+		  width: 6px;
+		  height: 6px;
+		  background-color: rgba(0,0,0,0.4);
+		}
+		 
+		/*定义滚动条轨道 内阴影+圆角*/
+		::-webkit-scrollbar-track {
+		  box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);
+		  border-radius: 10px;
+		  background-color: rgba(255, 255, 255, .5);
+		}
+		 
+		/*定义滑块 内阴影+圆角*/
+		::-webkit-scrollbar-thumb {
+		  border-radius: 10px;
+		  box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);
+		  background-color: rgba(240, 240, 240, .5);
 		}
 		section {
 		    float:left;
-		    min-width: 600px;
+		    min-width: 800px;
 		    height: 600px;
 		    color:#ffffff;
 			background-color: rgba(128,128,128,0.6);
-		    display:inline-block;
+		    overflow: auto;
 		}
 		footer {
 		    color:#ffffff;
@@ -43,50 +78,173 @@
 			text-decoration: none;
 			color:#ffffff;
 		}
-		footer,.noneDec0{
+		footer,header,.noneDec0{
 			-webkit-user-select:none;
     		-moz-user-select:none;
      		-ms-user-select:none;
      		user-select:none;
 		}
+		#ptc {
+    		width: 90px;
+    		color: #ffffff;
+    		background: #aaddff;
+    		line-height: 20px;
+    		position: absolute;
+    		margin-top: 4px;
+   			opacity: 1;
+   			z-index: 99999;
+		}
+		.ul0{
+			margin-left: 10px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font: 14px Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial, sans-serif;
+		}
+		.li0,#li0{
+			list-style: none;
+			font-size: 16px;
+			font: 14px Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial, sans-serif;
+		}
+		.lan{
+			margin-left: 1080px;
+		}
 	</style>
+	<!-- first English!-->
+	<script type="text/json" id="DLANS">
+		[["You haven't selected one of the the contents!"]
+		,["PS:Do not say the picture processed by me is very ulgy,after all I use Adobe Photoshop CS2!"]
+		,["Underpolice"]
+		,["Underpolice is a simulating game,we hope to let the user to have a different life."]
+		,["Click me to visit!"]
+		,["Die(Transcendence)"]
+		,["Are you ready for dying?If you are ready,then try to play the game!!"]
+		,["Tip:When you have visited this game's page,please wait for the resources' loading a while.(About 5 seconds.)hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"]
+		,["BadMooc"]
+		,["It is the best website to hurt Haomooc!"]
+		,["Tip:Do not shout to my website!"]
+		]
+	</script>
+	<script type="text/json" id="LANJS">
+		[["▼Language"]
+		,["Navigation"]
+		,["Click to read details."]
+		,["(none)"]
+		,["Underpolice"]
+		,["Die(Transcendence)"]
+		,["BadMooc"]
+		,["More content coming soon..."]
+		,["Haven't recorded yet "]
+		,["(Click me to look for the reason)"]
+		]
+	</script>
 </head>
 <body>
 	<header>
-		<p>aaaa0ggmc</p>
-	</header>
-	<nav>
-		<div class="out">
-			<p id="wu" class="noneDec0" onclick="PageSet(0,this)">(无)</p>
-			<p class="noneDec0" onclick="PageSet(1,this);">警察之下 UNDERPOLICE</a>
-			<p class="noneDec0" onclick="PageSet(2,this);">超度 Die</a>
-			<p class="noneDec0" onclick="PageSet(3,this);">坏慕课 BadMooc</a>
+		<!-- flex横向显示 !-->
+		<div style="display: flex;">
+			<p>AAAA0GGMC's Website</p>
+			<p>
+				<span class="lan">
+					<div onmouseover="clearTimeout(itv);setTS('block');" onmouseout="clearTimeout(itv);setTS('none');" onclick="clearTimeout(itv);setTS((sh == true)?('none'):('block'));" >
+						<span id="LAN0">▼语言</span>
+						<div onclick="" id="ptc" style="display: none;">
+							<div class="li0">
+								<ul class="ul0" id="li0">
+									<li onclick="c_lanSet(0);window.location.reload();" onmouseover="movSet(this);">English</li>
+									<li onclick="c_lanSet(-1);window.location.reload();" onmouseover="movSet(this);">中文</li>
+								</ul>
+							</div>	
+						</div>
+					</div>
+				</span>
+			</p>
+			<script type="text/javascript">
+				var dt = document.getElementById('ptc');
+				var sh = false;
+				var itv;
+				var tpre0 = new Image();
+				function movSet(t){
+					if(tpre0 == t){
+						return;
+					}
+					tpre.style.color = "#ffffff";
+					t.style.color = "#ffff00";
+					tpre = t;
+				}
+				function setTS(v){
+					itv = setTimeout(
+						function(){
+							sh = (v=="none")?false:true;
+							dt.style.display = v;
+						}
+						,100
+					);
+				}
+			</script>
 		</div>
-	</nav>
-	<section id="sv">
-		
-	</section>
+	</header>
+	<div style="display: flex;">
+		<nav>
+			<div class="out">
+				<div id="nav" class="noneDec0">
+					<p id="LAN1" style="text-align: center;">导航</p>
+					<p id="LAN2" style="font-size: 8px;text-align: center;color:#eeeeee">点击以查看详情</p>
+					<hr />
+					<p id="LAN3" onclick="PageSet(0,this);updateLanDy([0,1]);">(无)</p>
+					<hr />
+					<p id="LAN4" onclick="PageSet(1,this);updateLanDy([2,3,4]);">警察之下</a>
+					<hr/>
+					<p id="LAN5" onclick="PageSet(2,this);updateLanDy([5,6,7,4]);">超度</a>
+					<hr/>
+					<p id="LAN6" onclick="PageSet(3,this);updateLanDy([8,9,10,4]);">坏慕课</a>
+					<hr/>
+					<p id="LAN7" style="text-align: center;">更多内容即将开放...</p>
+				</div>
+			</div>
+		</nav>
+		<section id="sv">
+			
+		</section>
+	</div>
 	<footer>
-		<p>Copyright:<a href="https://space.bilibili.com/394099679" target="_blank" class="noneDec">aaaa0ggmc</a></p>
-		<p>未备案<span onclick="clickReason(this);" class="clik0">(点我看原因)</span></p>
+		<div style="background-color: rgba(0,100,255,0.2);">
+			<p>Copyright:aaaa0ggmc</p>
+			<div style="display: flex;justify-content: center;">
+				<img onclick="window.open('https://www.github.com/aaaa0ggMC','_blank');" class="noneDec" style="margin-left: 0px;margin-top: auto;margin-bottom: auto;" src="./github.jpg" width="5%" height="5%" />
+				<img onclick="window.open('https://space.bilibili.com/394099679','_blank');"  class="noneDec" style="margin-left: 10px;" src="./bilibili.jpg" width="8%" height="8%" />
+				<img onclick="window.open('tencent://message/?uin=1492715833','_blank');" class="noneDec" style="margin-left: 10px;margin-top: auto;margin-bottom: auto;" src="./qq.jpg" width="5%" height="5%" />
+			</div>
+			<p><p id="LAN8">未备案</p><span id="LAN9" onclick="clickReason(this);" class="clik0">(点我看原因)</span></p>
+		</div>
 	</footer>
 	<script type="text/javascript" src="./data.js"></script>
+	<script type="text/javascript" src="./cookie.js"></script>
 	<script type="text/javascript" src="./Tool/jquery.js"></script>
 	<script type="text/javascript">
 		var sv = document.getElementById('sv');
 		var tpre = new Image();
 		function PageSet(i,t){
+			if(t == tpre){
+				return;
+			}
 			sv.innerHTML = pages[i];
-			t.style.color = "#ffff00";
 			tpre.style.color = "#ffffff";
+			t.style.color = "#ffff00";
 			tpre = t;
 		}
 		function clickReason(tar) {
-			tar.innerHTML = "(原因:没钱(Haha!买不起中国的com域名)(80左右/年，你给我买行吗?))";
+			if(cookie.lan == -1){
+				tar.innerHTML = "(原因:没钱(Haha!买不起中国的com域名)(80左右/年，你给我买行吗?))";
+			}
+			else if(cookie.lan == 0){
+				tar.innerHTML = "(Reson:I have no money(Haha!I can't buy China's com area name)(80￥/year,can you buy it for me?))";
+			}
 			tar.onclick = "";
 			tar.class = "";
 		}
-		PageSet(0,document.getElementById('wu'));
+		PageSet(0,document.getElementById('LAN3'));
+		updateLanDy([0,1]);
+		loadLan(document.getElementById("LANJS").innerHTML);
 	</script>
 </body>
 </html>

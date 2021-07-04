@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>String Generator</title>
+	<meta name="keywords" content="StringGenerator">
+    <meta name="description" content="StringGenerator">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=1336, initial-scale=1" name="viewport">
+    <link rel="stylesheet" type="text/css" href="../Tool/sb0.css">
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	#str,.mf{
+    		color:#ffffff;
+    		font-size: 32px;
+    	}
+    	.mf{
+    		display: none;
+    	}
+    	#str{
+    		text-align: center;
+    	}
+    	body{
+    		background-color: #000000;
+    		color: #ffffff;
+    	}
+    	#btn{
+    		color:#ffffff;
+    		border: 0;
+    		background-color: #aaaaff;
+    		position: absolute;
+    	}
+    </style>
+    <script type="text/javascript" src="../Tool/tool.js"></script>
+    <script type="text/javascript" src="../Tool/cookie.js"></script>
+    <script type="text/javascript" src="./public.js"></script>
+</head>
+<body>
+	<p class="mf" id="cal"></p>
+	<header style="display: flex;">
+		<h3>StringGenerator</h3>
+		<h3 style="margin-left: 200px;">点我配置</h3>
+	</header>
+	<div>
+		<p id="str">...</p>
+		<button id="btn" onclick="UpdateStr(GetString());">生成字符串</button>
+	</div>
+    <script type="text/javascript" src="../Tool/tool.js"></script>
+    <script type="text/javascript" src="../Tool/cookie.js"></script>
+    <script type="text/javascript" src="./public.js"></script>
+	<script type="text/javascript" src="../Tool/jquery.js"></script>
+	<script type="text/javascript">
+		//Data
+		var cookie = new Cookie();
+		try{
+			cookie = JSON.parse(document.cookie);
+		}catch(e){
+			console.log("nmsl");
+			cookie = new Cookie();
+			//document.cookie = JSON.stringify(cookie);
+		}
+		console.log(cookie);
+		var w = parseInt(window.innerWidth * 0.1);
+		var h = parseInt(window.innerHeight * 0.1);
+		var btn = document.getElementById('btn');
+		btn.style.width = w+ "px";
+		btn.style.height = h + "px";
+		var x = parseInt((window.innerWidth - w)/(2*window.innerWidth)*100);
+		btn.style.left = x+"%";
+		btn.style.top = 60+"%";
+		var str = document.getElementById('str');
+		str.style["margin-top"] = parseInt(window.innerHeight/4)+"px";
+		var cal = $("#cal");
+		function UpdateStr(tms) {
+			var strt = "";
+			var final = "";
+			for (var i = 0; i < tms.length; i++) {
+				cal.text(strt+tms[i]);
+				if((cal.width() >= (window.innerWidth*0.8))){
+					final += strt+"<br />";
+					strt = "";
+				}
+				strt+=tms[i];
+			}
+			final += strt;
+			str.innerHTML = final;
+			if($("#str").height() >= (window.innerHeight * 0.6)){
+				if(tms == "String is too long to show!"){
+					window.close();//机子太渣了！！！
+				}else{
+					UpdateStr("String is too long to show!");
+				}
+			}
+		}
+		function GetString(){
+			if(cookie.characters.length <= 0 || cookie.places.length <= 0 || cookie.things.length <= 0){
+				return "好像没有配置好呢！点击配置来配置。";
+			}
+			var rt = "",i;
+			i = parseInt(Math.random() * (cookie.characters.length-1));
+			rt += cookie.characters[i];
+			rt += "在";
+			i = parseInt(Math.random() * (cookie.places.length-1));
+			rt += cookie.places[i];
+			i = parseInt(Math.random() * (cookie.things.length-1));
+			rt += cookie.things[i];
+			rt += "。";
+			return rt;
+		}
+		var urlD = getURLData();
+		console.log(urlD);
+		if(urlD != ""){
+			try{
+				var objk = JSON.parse(urlD);
+				cookie.characters = (objk[0]==null)?[]:objk[0];
+				cookie.places = (objk[1]==null)?[]:objk[1];
+				cookie.things = (objk[2]==null)?[]:objk[2];
+				storeCookie(cookie);
+			}catch(e){
+				alert("啊哦！处理时出了点问题！字符串可能无法存储!!!");
+				console.log("Processing Error!");
+			}
+		}
+		if(cookie.FUG){
+			//第一次使用
+			cookie.FUG = false;
+			storeCookie(cookie);
+			alert("欢迎使用StringGenerator!");
+			alert("你可以点击配置来配置内容.");
+			alert("点击生成来生成一个随机的字符串！！");
+		}
+	</script>
+</body>
+</html>

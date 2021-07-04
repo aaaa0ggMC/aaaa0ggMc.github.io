@@ -1,20 +1,11 @@
 //processing cookie here!
-function DocCookie(){
-	this.lan = -1;
-}
-function storeCookie(){
-	document.cookie = JSON.stringify(cookie);
-	console.log(JSON.stringify(cookie));
-	console.log(document.cookie);
-}
-
 function c_lanSet(i) {
 	cookie.lan = i;
-	console.log(cookie);
-	storeCookie();
+	storeCookie(cookie);
 }
 
 function loadLan(str){
+	console.log(cookie);
 	if(cookie.lan == -1)return;
 	var objx;
 	var lanobj = JSON.parse(str);
@@ -44,10 +35,14 @@ function updateLanDy(ar){
 		}
 	}
 }
-var cookie = new DocCookie();
+var cookie = new Cookie();
 try{
 	cookie = JSON.parse(document.cookie);
 }catch(e){
-	cookie = new DocCookie();
-	storeCookie();
+	cookie = new Cookie();
+	storeCookie(cookie);
+}
+if(cookie == null)
+{
+	cookie = new Cookie();
 }

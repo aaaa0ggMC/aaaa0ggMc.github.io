@@ -24,9 +24,14 @@ var pages = [
 	'<p style="text-align: center;">'+
 	'<a id="DLAN4" class="noneDec0" target="_blank" href="./BADMOOC/index.html">点我访问</a>'+
 	'</p>'
+	,
+	'<h2 id="DLAN11">须知</h2>'+
+	'<p style="margin-left: 2ch;">'+
+	'<ol id="DLAN12"><li>请赋予此网站足够大的权力！！</li><li>保证js可运行，cookie可写入/读取!</li><li>建议在电脑上运行</li></ol>'+
+	'</p>'
 	]
 ;//Underpolice
 //为什么会有这么多的DLAN4而不改
 //R:只要两个DLAN4不同时加载，就不会出错！！
 
-var c_lanc = 10;//=LANX中的X+1 X为翻译字段中最大
+var c_lanc = 11;//=LANX中的X+1 X为翻译字段中最大

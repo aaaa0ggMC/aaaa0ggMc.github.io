@@ -54,13 +54,22 @@
 	<script type="text/javascript" src="../Tool/jquery.js"></script>
 	<script type="text/javascript">
 		//Data
+		//Data
 		var cookie = new Cookie();
 		try{
-			cookie = JSON.parse(document.cookie);
+			var str = GetCookieStrI(1);
+			if(str == null){
+				throw new DomException();
+			}
+			cookie = JSON.parse(str);
 		}catch(e){
-			console.log("nmsl");
 			cookie = new Cookie();
-			//document.cookie = JSON.stringify(cookie);
+			var str = GetCookieStrI(0);
+			if(str == null){
+				alert("输入Cookie失败！正在返回主界面！");
+				window.open("../index.html","_blank");
+				window.close();
+			}
 		}
 		console.log(cookie);
 		var w = parseInt(window.innerWidth * 0.1);

@@ -12,6 +12,23 @@
 	</script>
 	<script type="text/javascript" src="./Tool/mainCookie.js"></script>
 	<script type="text/javascript" src="./cookie.js"></script>
+	<script type="text/javascript">
+		if(m_cookie.version != new Cookie().version){
+			if(m_cookie.version == null){
+				alert("Cookie太老旧，删除并重装中！");
+				RestartCookie();
+			}
+			var restore = new Cookie();
+			if(m_cookie.lan != null){
+				restore.lan = m_cookie.lan;
+			}
+			if(m_cookie.chosenIndex != null){
+				restore.chosenIndex = m_cookie.chosenIndex;
+			}
+			storeCookie(restore);
+			window.location.reload();
+		}
+	</script>
     <script type="text/javascript">
     	//检查语言
     	if(m_cookie.lan == 0){

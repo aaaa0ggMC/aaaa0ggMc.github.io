@@ -1,9 +1,8 @@
 function Cookie(){
-	this.characters = [];
-	this.places = [];
-	this.things = [];
 	this.lan = -1;
 	this.chosenIndex = 0;
+	//Cookie 版本
+	this.version = 0;
 }
 
 

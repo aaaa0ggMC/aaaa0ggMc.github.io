@@ -1,25 +1,25 @@
 //processing cookie here!
 function c_lanSet(i) {
-	cookie.lan = i;
-	storeCookie(cookie);
+	m_cookie.lan = i;
+	storeCookie(m_cookie);
 }
 
 function loadLan(str){
-	console.log(cookie);
-	if(cookie.lan == -1)return;
+	//console.log(cookie);
+	if(m_cookie.lan == -1)return;
 	var objx;
 	var lanobj = JSON.parse(str);
 	for (var i = 0; i < c_lanc; i++) {
 		objx = document.getElementById("LAN"+i);
 		if(objx){
-			objx.innerHTML = lanobj[i][cookie.lan];
+			objx.innerHTML = lanobj[i][m_cookie.lan];
 		}else{
 			console.log("Skip null element.");
 		}
 	}
 }
 function updateLanDy(ar){
-	if(cookie.lan == -1)return;
+	if(m_cookie.lan == -1)return;
 	var lanobj = JSON.parse(document.getElementById("DLANS").innerHTML);
 	if(!lanobj){
 		console.log("LanObj not exsits!");
@@ -29,20 +29,20 @@ function updateLanDy(ar){
 	for (var i = 0; i < ar.length; i++) {
 		objx = document.getElementById("DLAN" + ar[i]);
 		if(objx){
-			objx.innerHTML = lanobj[ar[i]][cookie.lan];
+			objx.innerHTML = lanobj[ar[i]][m_cookie.lan];
 		}else{
 			console.log("Skip null element.");
 		}
 	}
 }
-var cookie = new Cookie();
+var m_cookie = new Cookie();
 try{
-	cookie = JSON.parse(document.cookie);
+	m_cookie = JSON.parse(document.cookie);
 }catch(e){
-	cookie = new Cookie();
-	storeCookie(cookie);
+	m_cookie = new Cookie();
+	storeCookie(m_cookie);
 }
-if(cookie == null)
+if(m_cookie == null)
 {
-	cookie = new Cookie();
+	m_cookie = new Cookie();
 }

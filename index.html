@@ -2,12 +2,19 @@
 <html id="htm" lang="zh-cn">
 <head>
     <meta charset="utf-8">
-	<link rel="shortcut icon" href="./head.ico" />
-	<script type="text/javascript" src="./Tool/cookie.js"></script>
+	<link rel="shortcut icon" href="./res/head.ico" />
+	<script type="text/javascript">
+		//检测cookie
+		if(!navigator.cookieEnabled){
+			alert("浏览器不支持Cookie!Broswer doesn't support cookie!");
+			alert("将极大损害体验，建议开启！This will break your interest,please open it!");
+		}
+	</script>
+	<script type="text/javascript" src="./Tool/mainCookie.js"></script>
 	<script type="text/javascript" src="./cookie.js"></script>
     <script type="text/javascript">
     	//检查语言
-    	if(cookie.lan == 0){
+    	if(m_cookie.lan == 0){
 			document.getElementById('htm').lang = "en";
 		}
     </script>
@@ -23,7 +30,7 @@
 			padding: 0;
 		}
 		body{
-			background-image: url(./bg.jpg);
+			background-image: url(./res/bg.jpg);
 			background-repeat: no-repeat;
 			color:#ffffff;
 			background-color: rgba(0,100,255,0.2);
@@ -107,6 +114,8 @@
 		,["Tip:Do not shout to my website!"]
 		,["Read me"]
 		,["<li>Plase give this website enough right!</li><li>Make sure the js file can run，cookies can be written or read!</li><li>We suggest you to run it in your computer!</li>"]
+		,["Jvav is created by a great doctor named Zhnag HY.It is used for creating fantastic games like MiniWorld or QBlockWorld!"]
+		,["This is a great thing because you can program through brain waves, leading the world by a large margin!!!"]
 		]
 	</script>
 	<script type="text/json" id="LANJS">
@@ -176,15 +185,17 @@
 					<p id="LAN1" style="text-align: center;">导航</p>
 					<p id="LAN2" style="font-size: 8px;text-align: center;color:#eeeeee">点击以查看详情</p>
 					<hr />
-					<p id="LAN3" onclick="PageSet(0,this);updateLanDy([0,1]);">(无)</p>
+					<p id="LAN3" name="0" onclick="PageSet(0,this);m_cookie.chosenIndex = 0;storeCookie(m_cookie);updateLanDy([0,1]);">(无)</p>
 					<hr/>
-					<p id="LAN10" onclick="PageSet(4,this);updateLanDy([11,12]);">须知</a>
+					<p id="LAN10" name="1" onclick="PageSet(4,this);m_cookie.chosenIndex = 1;storeCookie(m_cookie);updateLanDy([11,12]);">须知</a>
 					<hr />
-					<p id="LAN4" onclick="PageSet(1,this);updateLanDy([2,3,4]);">警察之下</a>
+					<p id="LAN4" name="2" onclick="PageSet(1,this);m_cookie.chosenIndex = 2;storeCookie(m_cookie);updateLanDy([2,3,4]);">警察之下</a>
 					<hr/>
-					<p id="LAN5" onclick="PageSet(2,this);updateLanDy([5,6,7,4]);">超度</a>
+					<p id="LAN5" name="3" onclick="PageSet(2,this);m_cookie.chosenIndex = 3;storeCookie(m_cookie);updateLanDy([5,6,7,4]);">超度</a>
 					<hr/>
-					<p id="LAN6" onclick="PageSet(3,this);updateLanDy([8,9,10,4]);">坏慕课</a>
+					<p id="LAN6" name="4" onclick="PageSet(3,this);m_cookie.chosenIndex = 4;storeCookie(m_cookie);updateLanDy([8,9,10,4]);">坏慕课</a>
+					<hr/>
+					<p name="5" onclick="PageSet(5,this);m_cookie.chosenIndex = 5;updateLanDy([4,13,14]);">Jvav</a>
 					<hr/>
 					<p id="LAN7" style="text-align: center;">更多内容即将开放...</p>
 				</div>
@@ -198,9 +209,9 @@
 		<div style="text-align: center;">
 			<p>Copyright:aaaa0ggmc</p>
 			<div style="display: flex;justify-content: center;">
-				<img onclick="window.open('https://www.github.com/aaaa0ggMC','_blank');" class="noneDec" style="margin-left: 0px;margin-top: auto;margin-bottom: auto;" src="./github.jpg" width="5%" height="5%" />
-				<img onclick="window.open('https://space.bilibili.com/394099679','_blank');"  class="noneDec" style="margin-left: 10px;" src="./bilibili.jpg" width="8%" height="8%" />
-				<img onclick="window.open('tencent://message/?uin=1492715833','_blank');" class="noneDec" style="margin-left: 10px;margin-top: auto;margin-bottom: auto;" src="./qq.jpg" width="5%" height="5%" />
+				<img onclick="window.open('https://www.github.com/aaaa0ggMC','_blank');" class="noneDec" style="margin-left: 0px;margin-top: auto;margin-bottom: auto;" src="./res/github.jpg" width="5%" height="5%" />
+				<img onclick="window.open('https://space.bilibili.com/394099679','_blank');"  class="noneDec" style="margin-left: 10px;" src="./res/bilibili.jpg" width="8%" height="8%" />
+				<img onclick="window.open('tencent://message/?uin=1492715833','_blank');" class="noneDec" style="margin-left: 10px;margin-top: auto;margin-bottom: auto;" src="./res/qq.jpg" width="5%" height="5%" />
 			</div>
 			<p><p id="LAN8">未备案</p><span id="LAN9" onclick="clickReason(this);" class="clik0">(点我看原因)</span></p>
 		</div>
@@ -221,17 +232,17 @@
 			tpre = t;
 		}
 		function clickReason(tar) {
-			if(cookie.lan == -1){
+			if(m_cookie.lan == -1){
 				tar.innerHTML = "(原因:没钱(Haha!买不起中国的com域名)(80左右/年，你给我买行吗?))";
 			}
-			else if(cookie.lan == 0){
+			else if(m_cookie.lan == 0){
 				tar.innerHTML = "(Reson:I have no money(Haha!I can't buy China's com area name)(80￥/year,can you buy it for me?))";
 			}
 			tar.onclick = "";
 			tar.class = "";
 		}
-		PageSet(0,document.getElementById('LAN3'));
-		updateLanDy([0,1]);
+		var doc = document.getElementsByName(m_cookie.chosenIndex)[0];
+		doc.onclick();
 		loadLan(document.getElementById("LANJS").innerHTML);
 	</script>
 </body>

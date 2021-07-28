@@ -1,7 +1,7 @@
 var pages = [
 	'<div style="text-align: center;">'+
 	'<h2 id="DLAN0">暂未选择内容呢！！！</h2>'+
-	'<img style="vertical-align: middle;" src="./smile0.png" />'+
+	'<img style="vertical-align: middle;" src="./res/smile0.png" />'+
 	'<p id="DLAN1" style="text-align:center;">PS:不要说作者抠图菜，毕竟我用的是AdobePhotoshop CS2</p>'+
 	'</div>'
 	,
@@ -28,6 +28,15 @@ var pages = [
 	'<h2 id="DLAN11">须知</h2>'+
 	'<p style="margin-left: 2ch;">'+
 	'<ol id="DLAN12"><li>请赋予此网站足够大的权力！！</li><li>保证js可运行，cookie可写入/读取!</li><li>建议在电脑上运行</li></ol>'+
+	'</p>'
+	,
+	'<h2>Jvav</h2>'+
+	'<p style="margin-left: 2ch;">'+
+	'<span id="DLAN13">Jvav,是由伟大的张HY博士发明的编程语言，用于做像MN世界，QK世界这样的优秀产品</span>'+
+	'<br/><span id="DLAN14">这是一个伟大的东西，因为你可以通过脑电波来编程，领先世界一大截！！</span>'+
+	'</p>'+
+	'<p style="text-align: center;">'+
+	'<a id="DLAN4" class="noneDec0" target="_blank" href="./Jvav/index.html">点我访问</a>'+
 	'</p>'
 	]
 ;//Underpolice

@@ -3,7 +3,7 @@ function Cookie(){
 	this.places = [];
 	this.things = [];
 	this.lan = -1;
-	this.FUG = true;//第一次用Generator
+	this.chosenIndex = 0;
 }
 
 
@@ -14,7 +14,7 @@ function GetCookieStrI(i){
 		if(y == -1){
 			return null;
 		}
-		d_str =d _str.slice(y+1);
+		d_str = d_str.slice(y+1);
 	}
 	y = d_str.indexOf(';');
 	if(y == -1){
@@ -31,6 +31,6 @@ function storeCookie(c){
 }
 
 function RestartCookie(){
-	cookie = new Cookie();
-	storeCookie(cookie);
+	m_cookie = new Cookie();
+	storeCookie(m_cookie);
 }

@@ -1,0 +1,61 @@
+.CTHead{
+	font-size: 24px;
+	padding: 0;
+}
+
+.UTHead{
+	font-size: 16px;
+	padding: 0;
+}
+
+.Head0{
+	font-size: 20px;
+	padding: 0;
+}
+
+.hrf{
+	text-decoration: none;
+	color:#ffffff;
+}
+
+body{
+	color: #ffffff;
+	background-color: #000000;
+	margin: 0;
+	padding: 0;
+}
+
+.backTopBtn{
+	background-color: #00000000;
+	position: absolute;
+	cursor: default;
+	left: auto;
+	bottom: auto;
+}
+
+.subP{
+	margin-left: 2ch;
+	padding: 0;
+}
+
+.show{
+	cursor: default;
+}
+
+.stars{
+	font-size: 10px;
+	color:#888888;
+}
+
+.code{
+	background-color: #333333;
+}
+
+.codeSb{
+	padding:5px 5px 5px 5px;
+	display: inline-flex;
+}
+
+.CL_YELLOW{
+	color: #ffff00;
+}

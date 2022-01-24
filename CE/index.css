@@ -1,0 +1,17 @@
+.Body0{
+	background-color: #000000;
+	color: #ffffff;
+}
+
+#titleWelcome{
+	text-align: center;
+}
+
+#keywd,#func{
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.CenterP{
+	text-align: center;
+}

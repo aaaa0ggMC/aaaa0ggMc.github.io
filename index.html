@@ -118,35 +118,40 @@
 	</style>
 	<!-- first English!-->
 	<script type="text/json" id="DLANS">
-		[["You haven't selected one of the the contents!"]
-		,["PS:Do not say the picture processed by me is very ulgy,after all I use Adobe Photoshop CS2!"]
-		,["Underpolice"]
-		,["Underpolice is a simulating game,we hope to let the user to have a different life."]
-		,["Click me to visit!"]
-		,["Die(Transcendence)"]
-		,["Are you ready for dying?If you are ready,then try to play the game!!"]
-		,["Tip:When you have visited this game's page,please wait for the resources' loading a while.(About 5 seconds.)"]
-		,["BadMooc"]
-		,["It is the best website to hurt Haomooc!"]
-		,["Tip:Do not shout to my website!"]
-		,["Read me"]
-		,["<li>Plase give this website enough right!</li><li>Make sure the js file can run，cookies can be written or read!</li><li>We suggest you to run it in your computer!</li>"]
-		,["Jvav is created by a great doctor named Zhnag HY.It is used for creating fantastic games like MiniWorld or QBlockWorld!"]
-		,["This is a great thing because you can program through brain waves, leading the world by a large margin!!!"]
+		[["You haven't selected one of the contents!","u-hvnt-slct-wne-of-th-ctnts"]
+		,["PS:Do not say the picture processed by me is very ulgy,after all I use Adobe Photoshop CS2!","PS:d-nt-sy-th-pctr-prcssd-by-mi-is-vry-vgli,vft-oll-i-use-AdobePhotoShopCS2!"]
+		,["Underpolice","vndplis"]
+		,["Underpolice is a simulating game,we hope to let the user to have a different life.","vndplis-is-a-simuleiting-gm,wi-hpe-to-lt-th-usr-to-hv-a-diifent-laif."]
+		,["Click me to visit!","clk-mi-to-vst!"]
+		,["Die(Transcendence)","dai"]
+		,["Are you ready for dying?If you are ready,then try to play the game!!","r-u-rdy-fr-daing?If-u-r-rdy,then-ty-to-plai-th-gm!!"]
+		,["Tip:When you have visited this game's page,please wait for the resources' loading a while.(About 5 seconds.)","wai-bi-ba-bo,plis-weit-fr-sme-tme!"]
+		,["BadMooc","Bdmc"]
+		,["It is the best website to hurt Haomooc!","It-is-th-bst-wbst-to-hrt-Haomooc!"]
+		,["Tip:Do not shout to my website!","wai-bi-ba-bo:d-nt-sht-to-my-wbst!"]
+		,["Read me","rd-mi"]
+		,["<li>Plase give this website enough right!</li><li>Make sure the js file can run，cookies can be written or read!</li><li>We suggest you to run it in your computer!</li>"
+		,""]
+		,["Jvav is created by a great doctor named Zhnag HY.It is used for creating fantastic games like MiniWorld or QBlockWorld!"
+		,""]
+		,["This is a great thing because you can program through brain waves, leading the world by a large margin!!!"
+		,""]
+		,["Ce,is a coding lanuage which is made by me,it is in beta version now,This module will lead you to the documentation of Ce,you can visit it and learn something."
+		,""]
 		]
 	</script>
 	<script type="text/json" id="LANJS">
-		[["▼Language"]
-		,["Navigation"]
-		,["Click to read details."]
-		,["(none)"]
-		,["Underpolice"]
-		,["Die(Transcendence)"]
-		,["BadMooc"]
-		,["More content coming soon..."]
-		,["Haven't recorded yet "]
-		,["(Click me to look for the reason)"]
-		,["Read me"]
+		[["▼Language","▼lngge"]
+		,["Navigation","nav"]
+		,["Click to read details.","clk-to-rd-dtls."]
+		,["(none)","(none)"]
+		,["Underpolice","vnplise"]
+		,["Die(Transcendence)","dai"]
+		,["BadMooc","Bdmc"]
+		,["More content coming soon...","mr-ctnt-cming-sn!"]
+		,["Haven't recorded yet!","Hvnt-rec-yt!"]
+		,["(Click me to look for the reason)","(clk-to-lk-fr-rson)"]
+		,["Read me","Rd-mi"]
 		]
 	</script>
 </head>
@@ -162,8 +167,9 @@
 						<div onclick="" id="ptc" style="display: none;">
 							<div class="li0">
 								<ul class="ul0" id="li0">
-									<li onclick="c_lanSet(0);window.location.reload();" onmouseover="movSet(this);">English</li>
 									<li onclick="c_lanSet(-1);window.location.reload();" onmouseover="movSet(this);">中文</li>
+									<li onclick="c_lanSet(0);window.location.reload();" onmouseover="movSet(this);">English</li>
+									<li onclick="c_lanSet(1);window.location.reload();" onmouseover="movSet(this);">外星语</li>
 								</ul>
 							</div>	
 						</div>
@@ -212,7 +218,9 @@
 					<hr/>
 					<p id="LAN6" name="4" onclick="PageSet(3,this);m_cookie.chosenIndex = 4;storeCookie(m_cookie);updateLanDy([8,9,10,4]);">坏慕课</a>
 					<hr/>
-					<p name="5" onclick="PageSet(5,this);m_cookie.chosenIndex = 5;updateLanDy([4,13,14]);">Jvav</a>
+					<p name="5" onclick="PageSet(5,this);m_cookie.chosenIndex = 5;storeCookie(m_cookie);updateLanDy([4,13,14]);">Jvav</p>
+					<hr/>
+					<p name="6" onclick="PageSet(6,this);m_cookie.chosenIndex = 6;storeCookie(m_cookie);updateLanDy([4,15]);">Ce</p>
 					<hr/>
 					<p id="LAN7" style="text-align: center;">更多内容即将开放...</p>
 				</div>

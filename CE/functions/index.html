@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="index.js"></script>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<title>C!的函数</title>
+</head>
+<body>
+	<script type="text/javascript" src="./index.js"></script>
+	<div id="content">
+		<p>
+			<span class="CTHead">目录</span>
+			<div class="subP">
+				<a class="hrf" href="#Base">基本函数</a>
+				<br/>
+				<a class="hrf" href="#Higher">高级函数</a>
+			</div>
+		</p>
+	</div>
+	<div id="Base">
+		<span class="CTHead">基本函数</span>
+		<br/>
+		<div class="subP">
+			<span class="UTHead">函数，是一个高级编程语言中十分重要的东西,为此C!提供了较多的函数，0.8.1.6的版本的c!还提供了dll加载与调用
+				<a class="hrf" href="#star0" title="点我可以跳转至注释区域。">(*0)</a> 来提供对扩展的支持.</span>
+			<br/>
+			<br/>
+			<div class="fn">
+				<span class="Head0">SupportFunctions,_SF</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以查看目前支持的所有函数与关键字，函数返回函数与关键字的总个数。</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								var in = _SF();<br/>
+								println(in);//println在0.8.1.6加入
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								SupportFunctions:               |arguments<br/>
+								.....//省略没必要的东西<br/>
+								52
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">print,println</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以实现输出，仅支持一个参数，参数可用"+"号拼接。其中print不自动换行。</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								var a = "Hello",b = "World";<br/>
+								println(a+b+"!");//println在0.8.1.6加入
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								HelloWorld!
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">input,CE$input</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以实现输入，最多支持一个参数，最少可没有参数，参数实质上为对变量的引用。返回输入的值，其中CE$input为不显示输入，适合输入密码！但是，CE$input有些问题，所以暂时不建议使用！</span>
+					<br/>
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								var a,b,c,d;
+								a = input();
+								input(b);
+								c = CE$input();
+								CE$input(d);
+								print(a+b+c+d+"\n");
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输入:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								ILoveC<br/>
+								ILoveJava<br/>
+								ILoveC++<br/>
+								ILoveC#<br/>
+							</code>
+						</div>
+					</div>
+					<a class="hrf" href="#star1">(*1)</a>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								ILoveCILoveJavaILoveC++ILoveC#
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">math</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以计算加减乘除，注意无法计算sin等函数，只可以加减乘除（目前）！！！，可以使用'$'开头来引用程序的变量并转换为数字。和它类似的还有关键字cmath</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								var a = "100",b = "2";<br/>
+								println(math("$a/$b"));<br/>
+								b = 0;<br/>
+								println(math("$a/$b"));<br/>
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								50.000000<br/>
+								inf<br/>
+							</code>
+						</div>
+					</div>
+					<a class="hrf" href="#star2">(*2)</a>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">runProgram,system</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以实现命令行指令。</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								system("start cmd");//相当于 runProgram("start cmd");
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								//没有输出,弹出一个cmd窗口
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">local</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以输出变量的所有（允许展现）信息（该信息为程序处理变量时的真正的内部信息），但是变量属性必须带有OUTABLE,否则默认没有权限，可以使用#pragma CheckApi false来禁用检查。</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								CESTDAPI OUTABLE int out0 = 0;<br />
+								local(out0);
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								variable name                :out0<br />
+								variable value               :0<br />
+								variable virtual localtion   :0x0014<br />
+								variable's attributes        :<br/>
+								<div class="subP">
+								    const                    :false<br />
+								    inorecase                :false<br />
+								    depth                    :0
+								</div>
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">rand</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以实现随机数，仅支持三个参数。第一个为最小值，第二个为最大值，第三个为存储变量的引用，返回生成的随机值。注意：最大值与最小值不可以相等，否则解释程序会无故退出！</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								var a,b;<br />
+								rand(0,100,a);<br />
+								println(a);<br />
+								b = rand(0,100,a);<br />
+								println(a+" "+b);
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出(这只是一个可能的版本):</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								60
+								34 34
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">declare_var</span>
+				<div class="subP">
+					<span class="UTHead">这个函数将会在未来与XXXX_var一起推出，目前bug较多，勉强可以使用，与API:to_real定义变量类似。</span>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">SetConsolePosition,CE$setPos</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以设置控制台光标的位置。这里不方便演示，第一个参数为列数，第二个为行数。</span>
+				</div>
+			</div>
+
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">print$delay,print$d</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以实现每个字符延时输出，演示！第一个参数为时间，第二个为字符串！</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								print$d(100,"HelloWorld!");
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="show" class="UTHead" onclick="printDelay(document.getElementById('show1'),'HelloWorld!',100,this);">输出(点我演示):</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code id="show1" lang="output">
+								//等待演示
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">print$color,print$c</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以实现输出多彩的字符串，第一个参数为颜色<a class="hrf" href="#star3">(*3)</a>，第二个为字符串！</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								print$c(CL_YELLOW,"HelloWorld!");
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code class="CL_YELLOW" lang="output">
+								HelloWorld!
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">clear</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以实现清除屏幕，相当于system("cls");或者runProgram("cls");</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								print("123");<br/>
+								Sleep(1000);//方便演示<br />
+								clear();<br/>
+								Sleep(1000);
+								print("456");<br/>
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="show" class="UTHead" onclick="stringEditInDelay(document.getElementById('show0'),'123','456',1010,'//等待演示',this);">输出(点我来演示):</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code id="show0" lang="output">
+								//等待演示
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">ceEdit,cpowershell</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以让你进入内置的简单运行器.无法演示，没有参数！</span>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">free</span>
+				<div class="subP">
+					<span class="UTHead">该函数可以支持释放变量（包括系统变量（以后会修复的））（就是从变量表中清除，变量名必须是个字符串）。</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								BaseObj a = 10;<br />
+								seek();<br />
+								free("a");<br />
+								seek();
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+						        variable's name!         value!<br />
+								....省略非非关键字段<br />
+								author__<br />
+								a                                10<br />
+								        variable's name!         value!<br />
+								....省略非非关键字段<br />
+								author__
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">myFriend</span>
+				<div class="subP">
+					<span class="UTHead">这是一个彩蛋函数，接受一个字符串，自己试试吧。</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								myFriend("森下下士");
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								作者没有这个朋友!!!!
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">time</span>
+				<div class="subP">
+					<span class="UTHead">返回目前时间的字符串形式，必须接受一个引用，并把字符串的时间存储在引用中</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								var a;<br/>
+								time(a);<br/>
+								print(a);
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								Fri Aug 27 13:27:43 2021
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br/>
+			<div class="fn">
+				<span class="Head0">getKeyInt,getKeyChar</span>
+				<div class="subP">
+					<span class="UTHead">利用c/c++的conio.h中的_getch获取的值并返回，getKeyInt返回数字，getKeyChar返回字符，都只需要一个引用作为参数</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								var a;<br/>
+								getKeyInt(a);<br/>//输入了'q'
+								println(a);<br/>
+								getKeyChar(a);<br/>//输入了'q'
+								println(a);
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								//输入 q
+								113
+								//输入 q
+								q
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br />
+			<div class="fn">
+				<span class="Head0">getMousePosX,getMousePosY</span>
+				<div class="subP">
+					<span class="UTHead">利用c/c++的conio.h中的方法获取相对于整个屏幕的鼠标坐标，需要一个引用，返回NULL</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								var a;<br/>
+								getMousePosX(a);<br/>//输入了'q'
+								println(a);
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								//一种可能
+								792
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br />
+			<div class="fn">
+				<span class="Head0">getThisMousePosX,getThisMousePosY</span>
+				<div class="subP">
+					<span class="UTHead">利用c/c++的conio.h + windows API中的方法获取相对于控制台窗口的鼠标坐标，需要一个引用，返回NULL,(注：该函数需要运行在WinXP以上，否则不支持)</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								var a;<br/>
+								getThisMousePosX(a);<br/>//输入了'q'
+								println(a);
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="UTHead">输出:</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="output">
+								//一种可能
+								120
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br />
+			<div class="fn">
+				<span class="Head0">Sleep</span>
+				<div class="subP">
+					<span class="UTHead">利用windows API中的方法实现睡眠一定毫秒，需要一个参数作为休息时间，返回NULL。</span>
+					<br />
+					<span class="UTHead">例子：</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code lang="C!">
+								Sleep(1000);<br/>
+								print("HelloWorld!");
+							</code>
+						</div>
+					</div>
+					<br/>
+					<span class="show" onclick="if(tempTMID == 0){document.getElementById('show2').innerHTML = '';tempTMID = setTimeout(function(){document.getElementById('show2').innerHTML = 'HelloWorld!';},1000);tempTMID = 0;}" class="UTHead">输出(点我演示):</span>
+					<br/>
+					<div class="codeSb">
+						<div class="code">
+							<code id="show2" lang="output">
+								//等待演示
+							</code>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<br/>
+	<div id="Higher">
+		<span class="CTHead">高级函数</span>
+		<br />
+		<span class="UTHead">此章节讲述了高级的ce编程</span>
+		<br />
+		<br />
+		<div class="fn">
+			<span id="sd0" class="Head0">LoadInstDLL,LoadDLL</span>
+			<div class="subP">
+				<span class="UTHead">载入dll,接受两个参数，第一个参数为dll加载后的别名，第二个为dll的地址,返回第一个参数的值,当然如果嫌麻烦，可以吧dll的地址当做dll的别名.</span>
+				<br />
+				<span class="UTHead">例子：</span>
+				<br/>
+				<div class="codeSb">
+					<div class="code">
+						<code lang="C!">
+							var a = "myDLL",dllPath = "d0.dll";<br/>
+							LoadDLL(a,dllPath);<br/>
+							seek_dll();
+						</code>
+					</div>
+				</div>
+				<br/>
+				<span class="UTHead">输出:</span>
+				<br/>
+				<div class="codeSb">
+					<div class="code">
+						<code  lang="output">
+							myDLL 0x69480000
+						</code>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br />
+		<div class="fn">
+			<span class="Head0">UnloadInstDLL,UnloadDLL</span>
+			<div class="subP">
+				<span class="UTHead">卸载dll,接受一个参数，第一个参数为dll加载后的别名,返回NULL.</span>
+				<br />
+				<span class="UTHead">例子：</span>
+				<br/>
+				<div class="codeSb">
+					<div class="code">
+						<code lang="C!">
+							var a = "myDLL",dllPath = "d0.dll";<br/>
+							LoadDLL(a,dllPath);<br/>
+							UnloadDLL(a);
+						</code>
+					</div>
+				</div>
+				<br/>
+				<span class="UTHead">（暂无输出）</span>
+			</div>
+		</div>
+
+		<br />
+		<div class="fn">
+			<span class="Head0">CalInstDLL,CalDLL</span>
+			<div class="subP">
+				<span class="UTHead">调用dll中的方法，接受两个参数，第一个为dll的别名，第二个为函数的名字，加载的函数必须不接受或者不使用参数，也不返回任何值，c/c++中格式如下: void NAME(void){...},调用中出现异常会直接崩溃！</span>
+				<br />
+				<span class="UTHead">例子：</span>
+				<br/>
+				<div class="codeSb">
+					<div class="code">
+						<code lang="C!">
+							var a = "myDLL",dllPath = <span class="show" title='void DLLEXPORT A(void){cout << "HelloWorld!" << endl;} '>"d0.dll";//悬停在这里可查看d0.dll部分源代码(c++)</span><br/>
+							LoadDLL(a,dllPath);<br/>
+							CalDLL(a,"A");<br />
+							UnloadDLL(a);
+						</code>
+					</div>
+				</div>
+				<br/>
+				<span class="UTHead">输出:</span>
+				<br/>
+				<div class="codeSb">
+					<div class="code">
+						<code  lang="output">
+							HelloWorld!
+						</code>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br />
+		<div class="fn">
+			<span class="Head0">seek_dll</span>
+			<div class="subP">
+				<span class="UTHead">查看所有dll的列表</span>
+				<br />
+				<a class="hrf" href="#sd0">见LoadInstDLL（点我跳转至例子）</a>
+			</div>
+		</div>
+
+	</div>
+	<div class="stars">
+		<p id="star0">*0:目前的版本仅支持C/C++ DLL的无返回值无参数的函数,如void a(void){...},
+		例如这样的: int a(int);不支持，会强制转成void (*)(void)类型。</p>
+		<p id="star1">*1:其中，IloveC++与ILoveC#不会显示出来！</p>
+		<p id="star2">*2:C!一直很宽容，允许程序猿做许多擦语法球的事（实际上是我懒得优化了），因此100/0不会报错，返回inf</p>
+		<p id="star3">*3:color可以使用c! installer的sysVars.rb中的CL_XXX为参数，它定义了十分多的颜色可以选择，但是切记，不可以在命令行参数为ce -l xxxx,或者ce -e中输入CL_XXX，因为这两个参数c!是不会加载系统变量的（方便给你最干净的环境与最快的加载速度（其实是我懒得做了））。</p>
+	</div>
+	<div id="top" onclick="SlowlySTop(320);" title="返回顶部！" class="backTopBtn">
+		Top
+	</div>
+	<script type="text/javascript">
+		var pre = 0;
+		var ddoc = document.getElementById("top");
+		var xid = setInterval(function(){
+			if(window.pageYOffset != pre && window.pageYOffset >= window.innerHeight){
+				pre = window.pageYOffset;
+				ddoc.style.display = "";
+				ddoc.style.top = window.innerHeight * 0.1 + window.pageYOffset +"px";
+				ddoc.style.right = window.innerHeight * 0.01 + "px";
+			}else if(window.pageYOffset < window.innerHeight){
+				ddoc.style.display = "none";
+			}
+		},10);
+	</script>
+</body>
+</html>

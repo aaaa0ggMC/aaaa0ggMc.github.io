@@ -38,6 +38,13 @@ var pages = [
 	'<p style="text-align: center;">'+
 	'<a id="DLAN4" class="noneDec0" target="_blank" href="./Jvav/index.html">点我访问</a>'+
 	'</p>'
+	,
+	'<h2>Ce</h2>'+
+	'<p style="margin-left: 2ch;">'+
+	'<span id="DLAN15">Ce,是一个由该网站作者开发的编程语言，还处于beta版本，该模块指向了ce的文档，你可以访问它并且学到点东西。</span>'+
+	'<p style="text-align: center;">'+
+	'<a id="DLAN4" class="noneDec0" target="_blank" href="./CE/index.html">点我访问</a>'+
+	'</p>'
 	]
 ;//Underpolice
 //为什么会有这么多的DLAN4而不改

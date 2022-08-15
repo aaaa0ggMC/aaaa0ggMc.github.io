@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>这是个泼妇</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<header>
+		<p title="点我切换" onclick="localStorage.lan = parseInt(localStorage.lan)+1;location.reload();" id="lan">语言:中文</p>
+	</header>
+	<h1 class="cen" id="tit">这是个泼妇</h1>
+	<div>
+		<p id="whatPo">:泼妇是什么</p>
+		<p id="des" style="margin-left: 2ch;">简而言之，泼妇是黄怡婷。她十分地泼，以下便会介绍她为什么泼以及如何来泼。</p>
+	</div>
+	<script type="text/javascript">
+		function gl(t,v) {
+			for(a = 0;a < t.length;++a){
+				document.getElementById(t[a]).innerHTML = v[a];
+			}
+		}
+		if(localStorage.inited == null){
+			localStorage.inited = true;
+			localStorage.lan = 0;//CN
+		}
+		if(localStorage.lan%2 == 1){
+			document.getElementById('html').lang = "en-us";
+			document.getElementById('lan').title = "Click me to switch";
+			gl(["lan","tit","whatPo","des"],
+				["Language:English",
+				"This is a Pofu!!!",
+				":What is a Pofu??",
+				"Put simply,Pofu is Huang YiTing.She is very very po.And we will introduce why she is pofu & how she poes us."]);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- http://music.163.com/song/media/outer/url?id=522041157.mp3 !-->
+	<meta charset="utf-8" />
+	<title>地平线</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body onclick="">
+	<audio autoplay="true"  id="bgm" style="display: none;" src="audio/TheTaleIsACruelWorld.mp3"></audio>
+	<div id="Menu">
+		<div style="position: absolute;width: 100%;height: 50%;">
+			<h1 id="titleS">地平线</h1>
+		</div>
+		<div style="position: absolute;top: 50%;left: 45%;">
+			<h2 onclick="idp('bgm').pause();StartGame();" onmouseover="anim(this,'tmove',4,'infinite');" onmouseleave="setTimeout(unanim,100,this);">开始游戏</h2>
+
+			<h2 onclick="credits();" onmouseover="anim(this,'tmove',4,'infinite');" onmouseleave="setTimeout(unanim,100,this);">创作人员名单</h2>
+			<h2 onclick="window.close();" onmouseover="anim(this,'tmove',4,'infinite');" onmouseleave="setTimeout(unanim,100,this);">退出</h2>
+		</div>
+	</div>
+	<div id="gm">
+		<div id="normal">
+			
+		</div>
+		<div id="tit" style="position: absolute;top: 30%;width: 100%;height: auto;"></div>
+		<div id="free" style="position: absolute;width: 100%;height: 100%;">
+			
+		</div>
+		<div id="diag" style="display: none;background-color: #33333333;position: absolute;width:100%;height:25%;top:75%;">
+			<div id="ddin" style="margin: 10px;">
+				<div id="cnme"></div>
+				<p id="said"></p>
+			</div>
+		</div>
+		<div style="position: absolute;top:70%;width: 100%;height: auto;" id="sel">
+			<p class="ttB" id="s0"></p>
+			<p class="ttB" id="s1"></p>
+			<p class="ttB" id="s2"></p>
+			<p class="ttB" id="s3"></p>
+		</div>
+	</div>
+	<div id="credits" style="display: none;">
+		<div id="creditsMain" style="position: absolute;width: 100%;height: 100%;top: 150%;display: flex;">
+		</div>
+	</div>
+	<div id="about">
+		<h2 style="text-align: center;">关于做这个游戏</h2>
+		<p>哈，还没写！！！</p>
+	</div>
+	<div style="position: absolute;bottom: 0%;width: 100%;"><p style="text-align: center;" id="botn">绚烂的烟花是美的，只是终究落回了地平线。</p></div>
+	<div id="console"></div>
+	<script type="text/javascript" src="util.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript">
+		var top = 150;
+		hide(idp('about'));
+		idp("gm").style.display = "none";
+		document.body.style = "background-image: url(img/menu/main.png);background-size: cover;";
+		function credits() {
+			hide(idp("Menu"));
+			hide(idp("gm"));
+			show(idp("credits"));
+			setTimeout(function() {
+				alert("程序：杨盛龙\n美术：张贻婷\n剧情：杨盛龙&张贻婷");
+				window.open(location, '_self');
+				//show(idp("Menu"));
+				//show(idp("gm"));
+				//hide(idp("credits"));
+			},100);
+			/*
+`				1.history对象。
+
+				history.go(0);
+				2.location对象。
+
+				location.reload();
+				location = location;
+				location.assign(location);
+				location.replace(location);
+				3.document对象。
+
+				document.execcommand(refresh);
+				document.all.webbrowser.execwb(22, 1);
+				4.window对象。
+
+				window.open(location, '_self');
+				window.navigate(location);
+				 
+
+				"绚烂的烟花是美的，只是终究落回了地平线。"`
+			*/
+		}
+	</script>
+</body>
+</html>

@@ -45,6 +45,9 @@ var pages = [
 	'<p style="text-align: center;">'+
 	'<a id="DLAN4" class="noneDec0" target="_blank" href="./CE/index.html">点我访问</a>'+
 	'</p>'
+	,
+	'<h2>地平线</h2>'+
+	'<a id="DLAN4" class="noneDec0" target="_blank" href="./TextGame/index.html">点我访问</a>'
 	]
 ;//Underpolice
 //为什么会有这么多的DLAN4而不改

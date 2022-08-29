@@ -1,0 +1,12 @@
+body{
+	background-color: #000000;
+	color: #ffffff;
+	cursor: default;
+	-mos-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.cen{
+	text-align: center;
+}

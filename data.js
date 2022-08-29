@@ -36,7 +36,7 @@ var pages = [
 	'<br/><span id="DLAN14">这是一个伟大的东西，因为你可以通过脑电波来编程，领先世界一大截！！</span>'+
 	'</p> !-->'+
 	'<p style="text-align: center;">'+
-	'<a id="DLAN4" class="noneDec0" target="_blank" href="./Jvav/index.html">点我访问</a>'+
+	'<a id="DLAN4" class="noneDec0" target="_blank" href="./Pofu/index.html">点我访问</a>'+
 	'</p>'
 	,
 	'<h2>Ce</h2>'+
@@ -48,7 +48,8 @@ var pages = [
 	,
 	'<h2>地平线</h2>'+
 	'<a id="DLAN4" class="noneDec0" target="_blank" href="./TextGame/index.html">点我访问</a>'
-	]
+	,
+	'<h2>MD to html</h2><a id="DLAN4" class="noneDec0" target="_blank" href="./Pages/index.html">点我访问</a>']
 ;//Underpolice
 //为什么会有这么多的DLAN4而不改
 //R:只要两个DLAN4不同时加载，就不会出错！！

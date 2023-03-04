@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html id="htm" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+	<link rel="shortcut icon" href="./res/head.ico" />
+	<script type="text/javascript">
+		//检测cookie
+		if(!navigator.cookieEnabled){
+			alert("浏览器不支持Cookie!Broswer doesn't support cookie!");
+			alert("将极大损害体验，建议开启！This will break your interest,please open it!");
+		}
+	</script>
+	<script type="text/javascript" src="./Tool/mainCookie.js"></script>
+	<script type="text/javascript" src="./cookie.js"></script>
+	<script type="text/javascript">
+		if(m_cookie.version != new Cookie().version){
+			if(m_cookie.version == null){
+				alert("Cookie太老旧，删除并重装中！");
+				RestartCookie();
+			}
+			var restore = new Cookie();
+			if(m_cookie.lan != null){
+				restore.lan = m_cookie.lan;
+			}
+			if(m_cookie.chosenIndex != null){
+				restore.chosenIndex = m_cookie.chosenIndex;
+			}
+			storeCookie(restore);
+			window.location.reload();
+		}
+	</script>
+    <script type="text/javascript">
+    	//检查语言
+    	if(m_cookie.lan == 0){
+			document.getElementById('htm').lang = "en";
+		}
+    </script>
+	<title>Welcome To aaaa0ggmc's website!</title>
+	<meta name="keywords" content="aaaa0ggmc">
+    <meta name="description" content="aaaa0ggmc's website">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=1336, initial-scale=1" name="viewport">
+    <link rel="stylesheet" type="text/css" href="./Tool/sb0.css" />
+   	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-image: url(./res/bg.jpg);
+			background-repeat: no-repeat;
+			color:#ffffff;
+			background-color: rgba(0,100,255,0.2);
+			background-size: cover;
+		}
+		header {
+		    color:#ffffff;
+		    padding: 5px;
+		}
+		nav {
+		    float:left;
+		    min-width: 240px;
+		    height: 600px;
+		    margin-left: 20px;
+		    margin-right:10px;
+			background-color: rgba(128,128,128,0.6);
+		   	overflow: auto;
+		}
+		section {
+		    float:left;
+		    min-width: 800px;
+		    height: 600px;
+		    color:#ffffff;
+			background-color: rgba(128,128,128,0.6);
+		    overflow: auto;
+		}
+		footer {
+		    color:#ffffff;
+		    clear:both;
+		    text-align:center; 
+		    padding: 5px;
+		    font-size: 12px;
+		}
+		.noneDec,.noneDec0{
+			text-decoration: none;
+			color:#ffffff;
+		}
+		footer,header,.noneDec0{
+			-webkit-user-select:none;
+    		-moz-user-select:none;
+     		-ms-user-select:none;
+     		user-select:none;
+		}
+		#ptc {
+    		width: 90px;
+    		color: #ffffff;
+    		background: #000000;
+    		line-height: 20px;
+    		position: absolute;
+    		margin-top: 4px;
+   			opacity: 1;
+   			z-index: 99999;
+		}
+		.ul0{
+			margin-left: 10px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font: 14px Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial, sans-serif;
+		}
+		.li0,#li0{
+			list-style: none;
+			font-size: 16px;
+			font: 14px Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial, sans-serif;
+		}
+		.lan{
+			margin-left: 100px;
+		}
+	</style>
+	<!-- first English!-->
+	<script type="text/json" id="DLANS">
+		[["You haven't selected one of the contents!","u-hvnt-slct-wne-of-th-ctnts"]
+		,["PS:Do not say the picture processed by me is very ulgy,after all I use Adobe Photoshop CS2!","PS:d-nt-sy-th-pctr-prcssd-by-mi-is-vry-vgli,vft-oll-i-use-AdobePhotoShopCS2!"]
+		,["Underpolice","vndplis"]
+		,["Underpolice is a simulating game,we hope to let the user to have a different life.","vndplis-is-a-simuleiting-gm,wi-hpe-to-lt-th-usr-to-hv-a-diifent-laif."]
+		,["Click me to visit!","clk-mi-to-vst!"]
+		,["Die(Transcendence)","dai"]
+		,["Are you ready for dying?If you are ready,then try to play the game!!","r-u-rdy-fr-daing?If-u-r-rdy,then-ty-to-plai-th-gm!!"]
+		,["Tip:When you have visited this game's page,please wait for the resources' loading a while.(About 5 seconds.)","wai-bi-ba-bo,plis-weit-fr-sme-tme!"]
+		,["BadMooc","Bdmc"]
+		,["It is the best website to hurt Haomooc!","It-is-th-bst-wbst-to-hrt-Haomooc!"]
+		,["Tip:Do not shout to my website!","wai-bi-ba-bo:d-nt-sht-to-my-wbst!"]
+		,["Read me","rd-mi"]
+		,["<li>Plase give this website enough right!</li><li>Make sure the js file can run，cookies can be written or read!</li><li>We suggest you to run it in your computer!</li>"
+		,""]//Jvav is created by a great doctor named Zhnag HY.It is used for creating fantastic games like MiniWorld or QBlockWorld!
+		,["What?You don't know what is a POFU?Well,actually,POFU ia a woman named 黄怡婷,she ia very very PO!!!!"
+		,""]
+		,["This is a great thing because you can program through brain waves, leading the world by a large margin!!!"
+		,""]
+		,["Ce,is a coding lanuage which is made by me,it is in beta version now,This module will lead you to the documentation of Ce,you can visit it and learn something."
+		,""]
+		]
+	</script>
+	<script type="text/json" id="LANJS">
+		[["▼Language","▼lngge"]
+		,["Navigation","nav"]
+		,["Click to read details.","clk-to-rd-dtls."]
+		,["(none)","(none)"]
+		,["Underpolice","vnplise"]
+		,["Die(Transcendence)","dai"]
+		,["BadMooc","Bdmc"]
+		,["More content coming soon...","mr-ctnt-cming-sn!"]
+		,["Haven't recorded yet!","Hvnt-rec-yt!"]
+		,["(Click me to look for the reason)","(clk-to-lk-fr-rson)"]
+		,["Read me","Rd-mi"]
+		]
+	</script>
+</head>
+<body>
+	<header>
+		<!-- flex横向显示 !-->
+		<div style="display: flex;">
+			<p>AAAA0GGMC's Website</p>
+			<p>
+				<span class="lan">
+					<div onmouseover="clearTimeout(itv);setTS('block');" onmouseout="clearTimeout(itv);setTS('none');" onclick="clearTimeout(itv);setTS((sh == true)?('none'):('block'));" >
+						<span id="LAN0">▼语言</span>
+						<div onclick="" id="ptc" style="display: none;">
+							<div class="li0">
+								<ul class="ul0" id="li0">
+									<li onclick="c_lanSet(-1);window.location.reload();" onmouseover="movSet(this);">中文</li>
+									<li onclick="c_lanSet(0);window.location.reload();" onmouseover="movSet(this);">English</li>
+									<li onclick="c_lanSet(1);window.location.reload();" onmouseover="movSet(this);">外星语</li>
+								</ul>
+							</div>	
+						</div>
+					</div>
+				</span>
+			</p>
+			<script type="text/javascript">
+				var dt = document.getElementById('ptc');
+				var sh = false;
+				var itv;
+				var tpre0 = new Image();
+				function movSet(t){
+					if(tpre0 == t){
+						return;
+					}
+					tpre.style.color = "#ffffff";
+					t.style.color = "#ffff00";
+					tpre = t;
+				}
+				function setTS(v){
+					itv = setTimeout(
+						function(){
+							sh = (v=="none")?false:true;
+							dt.style.display = v;
+						}
+						,100
+					);
+				}
+			</script>
+		</div>
+	</header>
+	<div style="display: flex;">
+		<nav>
+			<div class="out">
+				<div id="nav" class="noneDec0">
+					<p id="LAN1" style="text-align: center;">导航</p>
+					<p id="LAN2" style="font-size: 8px;text-align: center;color:#eeeeee">点击以查看详情</p>
+					<hr />
+					<p id="LAN3" name="0" onclick="PageSet(0,this);m_cookie.chosenIndex = 0;storeCookie(m_cookie);updateLanDy([0,1]);">(无)</p>
+					<hr/>
+					<p id="LAN10" name="1" onclick="PageSet(4,this);m_cookie.chosenIndex = 1;storeCookie(m_cookie);updateLanDy([11,12]);">须知</a>
+					<hr />
+					<p id="LAN4" name="2" onclick="PageSet(1,this);m_cookie.chosenIndex = 2;storeCookie(m_cookie);updateLanDy([2,3,4]);">警察之下</a>
+					<hr/>
+					<p id="LAN5" name="3" onclick="PageSet(2,this);m_cookie.chosenIndex = 3;storeCookie(m_cookie);updateLanDy([5,6,7,4]);">超度</a>
+					<hr/>
+					<p id="LAN6" name="4" onclick="PageSet(3,this);m_cookie.chosenIndex = 4;storeCookie(m_cookie);updateLanDy([8,9,10,4]);">坏慕课</a>
+					<hr/>
+					<p id="LAN7" name="5" onclick="PageSet(7,this);m_cookie.chosenIndex = 5;storeCookie(m_cookie);">地平线</a>
+					<hr/>
+					<!--<p name="6" onclick="PageSet(5,this);m_cookie.chosenIndex = 6;storeCookie(m_cookie);updateLanDy([4,13,14]);">Jvav</p>
+					<hr />!-->
+					<p name="7" onclick="PageSet(5,this);m_cookie.chosenIndex = 7;storeCookie(m_cookie);updateLanDy([4,13,14]);">这是个泼妇</p>
+					<hr />
+					<p name="8" onclick="PageSet(8,this);m_cookie.chosenIndex = 8;storeCookie(m_cookie);updateLanDy([4]);">Pages</p>
+					<hr/>
+					<p name="9" onclick="PageSet(6,this);m_cookie.chosenIndex = 9;storeCookie(m_cookie);updateLanDy([4,15]);">Ce</p>
+					<hr/>
+
+					<p id="LAN7" style="text-align: center;">更多内容即将开放...</p>
+				</div>
+			</div>
+		</nav>
+		<section id="sv">
+			
+		</section>
+	</div>
+	<footer>
+		<div style="text-align: center;">
+			<p>Copyright:aaaa0ggmc</p>
+			<div style="display: flex;justify-content: center;">
+				<img onclick="window.open('https://www.github.com/aaaa0ggMC','_blank');" class="noneDec" style="margin-left: 0px;margin-top: auto;margin-bottom: auto;" src="./res/github.jpg" width="5%" height="5%" />
+				<img onclick="window.open('https://space.bilibili.com/394099679','_blank');"  class="noneDec" style="margin-left: 10px;" src="./res/bilibili.jpg" width="8%" height="8%" />
+				<img onclick="window.open('tencent://message/?uin=1492715833','_blank');" class="noneDec" style="margin-left: 10px;margin-top: auto;margin-bottom: auto;" src="./res/qq.jpg" width="5%" height="5%" />
+			</div>
+			<p><p id="LAN8">未备案</p><span id="LAN9" onclick="clickReason(this);" class="clik0">(点我看原因)</span></p>
+		</div>
+	</footer>
+	<script type="text/javascript" src="./data.js"></script>
+	<script type="text/javascript" src="./cookie.js"></script>
+	<script type="text/javascript" src="./Tool/jquery.js"></script>
+	<script type="text/javascript">
+		var sv = document.getElementById('sv');
+		var tpre = new Image();
+		function PageSet(i,t){
+			if(t == tpre){
+				return;
+			}
+			sv.innerHTML = pages[i];
+			tpre.style.color = "#ffffff";
+			t.style.color = "#ffff00";
+			tpre = t;
+		}
+		function clickReason(tar) {
+			if(m_cookie.lan == -1){
+				tar.innerHTML = "(原因:没钱(Haha!买不起中国的com域名)(80左右/年，你给我买行吗?))";
+			}
+			else if(m_cookie.lan == 0){
+				tar.innerHTML = "(Reson:I have no money(Haha!I can't buy China's com area name)(80￥/year,can you buy it for me?))";
+			}
+			tar.onclick = "";
+			tar.class = "";
+		}
+		var doc = document.getElementsByName(m_cookie.chosenIndex)[0];
+		doc.onclick();
+		loadLan(document.getElementById("LANJS").innerHTML);
+	</script>
+</body>
+</html>

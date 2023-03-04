@@ -1,0 +1,12 @@
+.header_dv{
+	height: 32px;
+	color: black;
+	margin: 0;
+	padding: 0;
+}
+
+#single_line{
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
